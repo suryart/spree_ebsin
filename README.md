@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/suryart/spree_ebsin.png)](https://codeclimate.com/github/suryart/spree_ebsin)
+
 # Welcome to Spree Ebsin
 
 This is [EBS](http://www.ebs.in) Payment Gateway Extension for Spree. It has been extended to support Spree's Billing Integrations which allows users to configure the Ebs Payment gateway via the Admin UI.
