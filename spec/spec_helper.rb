@@ -1,4 +1,7 @@
 # Run Coverage report
+require 'coveralls'
+Coveralls.wear!
+
 require 'simplecov'
 SimpleCov.start do
   add_group 'Controllers', 'app/controllers'
