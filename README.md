@@ -1,5 +1,6 @@
 [![Code Climate](https://codeclimate.com/github/suryart/spree_ebsin.png)](https://codeclimate.com/github/suryart/spree_ebsin)
 [![Build Status](https://travis-ci.org/suryart/spree_ebsin.png?branch=master)](https://travis-ci.org/suryart/spree_ebsin)
+[![Coverage Status](https://coveralls.io/repos/suryart/spree_ebsin/badge.png)](https://coveralls.io/r/suryart/spree_ebsin)
 
 # Welcome to Spree Ebsin
 
