@@ -1,0 +1,26 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  spree:
+    account_id: "Account Id"
+    back_to_payment_options: "Back to payment options"
+    confirm_your_order: "Confirm your order"
+    currency_code: "Currency"
+    ebsin: "Payment"
+    ebsin_pay_instructions: "Pay using credit or debit card from EBS (you'll be redirected to EBS secure server)"
+    ebsin_payment: "Pay by credit card"
+    ebsin_payment_failure: "Something went wrong. Please try again."
+    ebsin_payment_response_error: "%{error_message}. Payment was not successful."
+    ebsin_payment_success: "Your payment has been accepted."
+    ebsin_submit: "Pay and place order"
+    language: "Language"
+    mode: "Work mode"
+    order_number: "Order number:"
+    pay_now: "Pay Now"
+    payment_success: "Payment Success"
+    redirecting_for_payment: "Redirecting for payment ..."
+    redirect_success: "Success Redirect URL"
+    redirect_fail: "Failure Redirect URL"
+    secret_key: "Secret Key"
+    url: "URL"
