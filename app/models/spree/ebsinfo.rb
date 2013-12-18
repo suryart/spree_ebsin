@@ -1,6 +1,6 @@
 module Spree  
   class Ebsinfo < ActiveRecord::Base
-    attr_accessible :first_name, :last_name, :transaction_id, :payment_id, :amount, :order_id
+    # attr_accessible :first_name, :last_name, :transaction_id, :payment_id, :amount, :order_id
 
     belongs_to :order, :class_name => 'Spree::Order'
 

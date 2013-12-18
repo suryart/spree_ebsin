@@ -7,8 +7,6 @@ module Spree
     preference :mode,          :string
     preference :currency_code, :string
 
-    attr_accessible :preferred_account_id, :preferred_url, :preferred_secret_key, :preferred_mode, :preferred_currency_code
-
     def payment_profiles_supported?
       false
     end

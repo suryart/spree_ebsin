@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_ebsin'
-  s.version     = '2.0.0'
+  s.version     = '2.1.0'
   s.summary     = 'Adds Ebsin as a Payment Method to Spree store'
   s.description = 'Adds Ebsin Payment Method option in admin, which can be enabled for payments using Ebsin(http://www.ebs.in/) on your Spree store.'
   s.required_ruby_version = '>= 1.9.3'
@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency 'spree_core', '~> 2.0.0'
+  s.add_dependency 'spree_core', '~> 2.1.0'
 
   s.add_development_dependency 'capybara', '~> 2.1'
   s.add_development_dependency 'coffee-rails'

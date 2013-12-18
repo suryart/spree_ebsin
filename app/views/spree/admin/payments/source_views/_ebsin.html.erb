@@ -1,0 +1,19 @@
+<fieldset data-hook="ebsin">
+  <legend align="center"><%= Spree.t(:ebsin) %></legend>
+
+  <div class="row">
+    <div class="alpha six columns">      
+      <dl>
+        <dt><%= Spree.t(:transaction_id) %>:</dt>
+        <dd><%= payment.source.transaction_id %></dd>
+
+        <dt><%= Spree.t(:payment_id) %>:</dt>
+        <dd><%= payment.source.payment_id %></dd>
+
+        <dt><%= Spree.t(:amount) %>:</dt>
+        <dd><%= payment.source.amount %></dd>
+      </dl>
+    </div>  
+  </div>
+
+</fieldset>
