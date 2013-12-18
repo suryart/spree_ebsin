@@ -4,6 +4,8 @@ describe 'Orders' do
   let!(:product) { create(:product, :available_on => 1.day.ago) }
   let!(:zone) { Spree::Zone.find_by_name("GlobalZone") || create(:global_zone) }
   let!(:shipping_method) { create(:shipping_method, :zones => [zone]) }
+  let!(:country) { FactoryGirl.create(:country) }
+  let!(:state) { country.states.first || FactoryGirl.create(:state, :country => country) }
 
   # let(:order) { OrderWalkthrough.up_to(:payment) }
   # let(:user) { create(:user) }
@@ -24,21 +26,23 @@ describe 'Orders' do
 
       visit spree.root_path
 
-      click_link product.name
-      click_button 'Add To Cart'
-      click_button 'Checkout'
-
+      click_link 'Login'
+      
       fill_in 'spree_user_email', :with => @user.email
       fill_in 'spree_user_password', :with => @user.password
 
       click_button "Login"
+
+      click_link product.name
+      click_button 'Add To Cart'
+      click_button 'Checkout'
 
       fill_in 'order_bill_address_attributes_firstname', :with => 'Test'
       fill_in 'order_bill_address_attributes_lastname', :with => 'User'
       fill_in 'order_bill_address_attributes_address1', :with => 'Testing Address1'
       fill_in 'order_bill_address_attributes_address2', :with => 'Testing Street Address2'
       fill_in 'order_bill_address_attributes_city', :with => 'Test City'
-      select 'Alabama', :from => 'order_bill_address_attributes_state_id'
+      select state.name, :from => 'order_bill_address_attributes_state_id'
 
       fill_in 'order_bill_address_attributes_zipcode', :with => '35004'
       fill_in 'order_bill_address_attributes_phone', :with => '8888888888'

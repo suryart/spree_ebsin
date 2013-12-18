@@ -1,10 +1,10 @@
-[![Code Climate](https://codeclimate.com/github/suryart/spree_ebsin.png)](https://codeclimate.com/github/suryart/spree_ebsin)
-[![Build Status](https://travis-ci.org/suryart/spree_ebsin.png?branch=master)](https://travis-ci.org/suryart/spree_ebsin)
-[![Coverage Status](https://coveralls.io/repos/suryart/spree_ebsin/badge.png)](https://coveralls.io/r/suryart/spree_ebsin)
-
 # Welcome to Spree Ebsin
 
 This is [EBS](http://www.ebs.in) Payment Gateway Extension for Spree. It has been extended to support Spree's Billing Integrations which allows users to configure the Ebs Payment gateway via the Admin UI.
+
+[![Code Climate](https://codeclimate.com/github/suryart/spree_ebsin.png)](https://codeclimate.com/github/suryart/spree_ebsin)
+[![Build Status](https://travis-ci.org/suryart/spree_ebsin.png?branch=2-0-stable)](https://travis-ci.org/suryart/spree_ebsin)
+[![Coverage Status](https://coveralls.io/repos/suryart/spree_ebsin/badge.png)](https://coveralls.io/r/suryart/spree_ebsin)
 
 Installation
 ------------
@@ -13,6 +13,11 @@ Add spree_ebsin to your Gemfile:
 
 ```ruby
 gem 'spree_ebsin'
+```
+Or get the latest from github:
+
+```ruby
+gem 'spree_ebsin', github: 'suryart/spree_ebsin', branch: '2-0-stable'
 ```
 
 Bundle your dependencies and run the installation generator:
