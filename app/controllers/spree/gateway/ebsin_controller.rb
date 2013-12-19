@@ -64,6 +64,8 @@ module Spree
         payment = @order.payments.create!(:amount => 0,  :payment_method_id => ebs_payment_method.id) if payment.blank?
         payment.source = source
         payment.amount = source.amount
+        payment.response_code = @data["ResponseCode"]
+        payment.avs_response = @data["ResponseMessage"]
         payment.save
         payment.complete!
 
