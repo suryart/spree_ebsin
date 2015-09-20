@@ -9,8 +9,8 @@ FactoryGirl.define do
     after(:create) do |payment_method|
       payment_method.preferred_currency_code = "INR"
       payment_method.preferred_secret_key = "ebskey"
-      payment_method.preferred_url = "https://secure.ebs.in/pg/ma/sale/pay/"
-      payment_method.preferred_account_id = "5880"
+      payment_method.preferred_url = "https://secure.ebs.in/pg/ma/payment/request"
+      payment_method.preferred_account_id = "17971"
       payment_method.preferred_mode = "TEST"
     end
   end

@@ -49,7 +49,7 @@ Simply add this require statement to your spec_helper:
 require 'spree_ebsin/factories'
 ```
 
-Also, here is the link to: [Credit Card Payment Credentials for Testing](https://support.ebs.in/app/index.php?/default_import/Knowledgebase/Article/View/339/0/what-is-the-test-credentials-for-testing-the-credit-payment-option)
+Also, here is the link to: [Credit Card Payment Credentials for Testing](https://support.ebs.in/app/index.php?/default_import/Knowledgebase/Article/View/500/0/what-is-the-test-card-credentials-for-verifying-the-payment-option-in-test-mode)
 
 
 ## Contributing

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'Orders' do
+describe 'Orders', type: :feature, js: true do
   stub_authorization!
   
   context "admin creating and update a new payment method" do
@@ -18,9 +18,9 @@ describe 'Orders' do
       select Rails.env.to_s.humanize, :from => "gtwy-env"
 
       click_button "Create"
-      page.should have_content("successfully created!")
+      expect(page).to have_content("successfully created!")
 
-      expect(find_field('payment_method_ebsin_preferred_url').value).to eq("https://secure.ebs.in/pg/ma/sale/pay/")
+      expect(find_field('payment_method_ebsin_preferred_url').value).to eq("https://secure.ebs.in/pg/ma/payment/request")
 
       fill_in 'payment_method_ebsin_preferred_account_id', :with => "5880"
       fill_in 'payment_method_ebsin_preferred_secret_key', :with => "ebskey"
@@ -29,9 +29,9 @@ describe 'Orders' do
       select 'Both', :from => "payment_method_display_on"
 
       click_button "Update"
-      page.should have_content("successfully updated!")
+      expect(page).to have_content("successfully updated!")
 
-      find_field("payment_method_name").value.should == "Credit Card / Debit Card / Net Banking"
+      expect(find_field("payment_method_name").value).to eq("Credit Card / Debit Card / Net Banking")
     end
   end
 end

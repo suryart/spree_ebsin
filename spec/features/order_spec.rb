@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'Orders' do
+describe 'Orders', type: :feature, :js => true do
   let!(:product) { create(:product, :available_on => 1.day.ago) }
   let!(:zone) { Spree::Zone.find_by_name("GlobalZone") || create(:global_zone) }
   let!(:shipping_method) { create(:shipping_method, :zones => [zone]) }
@@ -22,7 +22,7 @@ describe 'Orders' do
     before(:each) do
       create(:ebs_payment_method)
 
-      @user = create(:user, :email => "email@person.com", :password => "secret", :password_confirmation => "secret")
+      @user = create(:user, :email => "ebs@example.com", :password => "secret", :password_confirmation => "secret")
 
       visit spree.root_path
 
@@ -56,7 +56,7 @@ describe 'Orders' do
       fill_in 'frm_name_on_card', :with => 'Test User'
     end
 
-    it "should be able to make an order with complete state", :js => true do
+    it "should be able to make an order with complete state" do
       fill_in 'number_1', :with => '4111'
       fill_in 'number_2', :with => '1111'
       fill_in 'number_3', :with => '1111'
@@ -69,11 +69,11 @@ describe 'Orders' do
 
       sleep(10)
 
-      page.should have_content(Spree.t(:payment_success))
+      expect(page).to have_content(Spree.t(:payment_success))
       expect(@user.orders.complete.last.state).to eq("complete")
     end
 
-    it "should be able to fail an order with payment state", :js => true do
+    it "should be able to fail an order with payment state" do
       fill_in 'number_1', :with => '4111'
       fill_in 'number_2', :with => '1111'
       fill_in 'number_3', :with => '1111'
@@ -85,7 +85,7 @@ describe 'Orders' do
       click_button "Pay"
       click_link "Merchant Website"
 
-      page.should have_content("Transaction Failed. Payment was not successful.")
+      expect(page).to have_content("Transaction Failed. Payment was not successful.")
       expect(@user.orders.last.state).to eq("payment")
     end
   end
