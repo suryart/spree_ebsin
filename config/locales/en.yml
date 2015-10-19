@@ -26,3 +26,4 @@ en:
     secret_key: "Secret Key"
     transaction_id: "Transaction ID"
     url: "URL"
+    should_have_valid_channel_values: "Valid channel values are 0, 1, or 2"
