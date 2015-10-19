@@ -35,10 +35,10 @@ module Spree
 
         ebsin_payment_success
         
-        redirect_to order_url(@order, {:checkout_complete => true, :token => @order.token}), :notice => Spree.t(:payment_success)
+        redirect_to order_url(@order, {:checkout_complete => true, :guest_token => @order.guest_token}), :notice => Spree.t(:payment_success)
       else
         flash[:error] = Spree.t(:ebsin_payment_response_error, {:error_message => @data["ResponseMessage"]})
-        redirect_to (@order.blank? ? root_url : edit_order_url(@order, {:token => @order.token}))
+        redirect_to (@order.blank? ? root_url : edit_order_url(@order, {:guest_token => @order.guest_token}))
       end
 
     end
