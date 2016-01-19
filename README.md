@@ -2,6 +2,8 @@
 
 This is [EBS](http://www.ebs.in) Payment Gateway Extension for Spree. It has been extended to support Spree's Billing Integrations which allows users to configure the Ebs Payment gateway via the Admin UI.
 
+NOTE: 3.x or above will now be pointing to solidus instead of spree.
+
 [![Code Climate](https://codeclimate.com/github/suryart/spree_ebsin.png)](https://codeclimate.com/github/suryart/spree_ebsin)
 [![Build Status](https://travis-ci.org/suryart/spree_ebsin.png?branch=2-1-stable)](https://travis-ci.org/suryart/spree_ebsin)
 [![Coverage Status](https://coveralls.io/repos/suryart/spree_ebsin/badge.png)](https://coveralls.io/r/suryart/spree_ebsin)
@@ -12,13 +14,13 @@ Installation
 Add spree_ebsin to your Gemfile:
 
 ```ruby
-gem 'spree_ebsin', '2.1.0'
+gem 'spree_ebsin', '3.1.1.1'
 ```
 
 Or get the latest from github:
 
 ```ruby
-gem 'spree_ebsin', github: 'suryart/spree_ebsin', branch: '2-1-stable'
+gem 'spree_ebsin', github: 'suryart/spree_ebsin', branch: '3-1-1-stable'
 ```
 
 Bundle your dependencies and run the installation generator:
@@ -49,7 +51,7 @@ Simply add this require statement to your spec_helper:
 require 'spree_ebsin/factories'
 ```
 
-Also, here is the link to: [Credit Card Payment Credentials for Testing](https://support.ebs.in/app/index.php?/default_import/Knowledgebase/Article/View/339/0/what-is-the-test-credentials-for-testing-the-credit-payment-option)
+Also, here is the link to: [Credit Card Payment Credentials for Testing](https://support.ebs.in/app/index.php?/default_import/Knowledgebase/Article/View/500/0/what-is-the-test-card-credentials-for-verifying-the-payment-option-in-test-mode)
 
 
 ## Contributing

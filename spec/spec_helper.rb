@@ -29,11 +29,12 @@ Dir[File.join(File.dirname(__FILE__), 'support/**/*.rb')].each { |f| require f }
 
 # Requires factories defined in spree_core
 require 'spree/testing_support/factories'
-require 'spree_ebsin/factories'
 require 'spree/testing_support/controller_requests'
 require 'spree/testing_support/authorization_helpers'
 require 'spree/testing_support/url_helpers'
 require 'spree/testing_support/order_walkthrough'
+require 'spree/testing_support/preferences'
+require 'spree/testing_support/flash'
 
 # Requires factories defined in lib/spree_ebsin/factories.rb
 require 'spree_ebsin/factories'
@@ -48,9 +49,9 @@ RSpec.configure do |config|
   # visit spree.admin_path
   # current_path.should eql(spree.products_path)
   # config.include Spree::TestingSupport::UrlHelpers
-  config.include Spree::TestingSupport::AuthorizationHelpers
+  # config.include Spree::TestingSupport::AuthorizationHelpers 
   config.include Spree::TestingSupport::UrlHelpers
-  config.include Spree::TestingSupport::ControllerRequests
+  config.include Spree::TestingSupport::ControllerRequests, :type => :controller
   config.include Spree::TestingSupport::Preferences
   config.include Spree::TestingSupport::Flash
   config.include Capybara::DSL
@@ -81,7 +82,7 @@ RSpec.configure do |config|
 
   # Before each spec check if it is a Javascript test and switch between using database transactions or not where necessary.
   config.before :each do
-    DatabaseCleaner.strategy = example.metadata[:js] ? :truncation : :transaction
+    DatabaseCleaner.strategy = RSpec.current_example.metadata[:js] ? :truncation : :transaction
     DatabaseCleaner.start
     reset_spree_preferences
   end

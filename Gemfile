@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'solidus', github: 'solidusio/solidus', branch: 'v1.1'
 # Provides basic authentication functionality for testing parts of your engine
-gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '2-1-stable'
+gem 'solidus_auth_devise', github: 'solidusio/solidus_auth_devise', branch: 'master'
 
 gem 'coveralls', require: false
 
