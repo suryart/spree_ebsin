@@ -12,7 +12,7 @@ module Spree
       load_order
       @order.payments.destroy_all
       @hash = Digest::MD5.hexdigest([@gateway.preferred_secret_key, @gateway.preferred_account_id, @order.total.to_s, @order.number, [gateway_ebsin_comeback_url(@order),'DR={DR}'].join('?'), @gateway.preferred_mode].join('|'))
-      payment = @order.payments.create!(:amount => 0,  :payment_method_id => @gateway.id)
+      payment = @order.payments.create!(:amount => 0,  :payment_method_id => @gateway.id, :source => @gateway)
 
       if @order.blank? || @gateway.blank?
         flash[:error] = Spree.t(:invalid_arguments)

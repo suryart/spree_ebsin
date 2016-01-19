@@ -21,7 +21,7 @@
 	<%= hidden_field_tag 'city',            @bill_address.city %>
 	<%= hidden_field_tag 'postal_code',     @bill_address.zipcode %>
 	<%= hidden_field_tag 'country',         @bill_address.country.iso3 %>
-  <%= hidden_field_tag 'description',     "#{Spree::Config[:site_name]} Order: #{@order.number}" %>
+  <%= hidden_field_tag 'description',     "#{Spree::Store.first.try(:name)} Order: #{@order.number}" %>
   <%= hidden_field_tag 'email',           @order.email || @order.user.try(:email)  %>
 
   <%= hidden_field_tag 'mode',            @gateway.preferred_mode %>
