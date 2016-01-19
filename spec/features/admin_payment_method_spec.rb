@@ -6,7 +6,7 @@ describe 'Orders', type: :feature, js: true do
   context "admin creating and update a new payment method" do
     it 'should be able to create a new payment method for Ebs and update preferences' do
       visit spree.admin_path
-      click_link "Configuration"
+      click_link "Settings"
 
       click_link "Payment Methods"
       click_link "admin_new_payment_methods_link"
@@ -15,7 +15,6 @@ describe 'Orders', type: :feature, js: true do
       fill_in "payment_method_description", :with => "Testing Credit Card / Debit Card / Net Banking Payment using EBS"
 
       select "PaymentMethod::Ebsin", :from => "gtwy-type"
-      select Rails.env.to_s.humanize, :from => "gtwy-env"
 
       click_button "Create"
       expect(page).to have_content("successfully created!")

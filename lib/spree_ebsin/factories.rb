@@ -4,7 +4,8 @@ FactoryGirl.define do
 
   factory :ebs_payment_method, :class => Spree::PaymentMethod::Ebsin do
     name 'Credit Card / Debit Card / Net Banking'
-    environment 'test'
+    active true
+    display_on ''
     
     after(:create) do |payment_method|
       payment_method.preferred_currency_code = "INR"
